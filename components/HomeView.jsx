@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Modal from "./Modal";
 import { quotes } from "@/data/quotes";
 import { initiatives, initiativesSection } from "@/data/initiatives";
 
@@ -39,7 +38,7 @@ const icons = [
 ];
 
 export default function HomeView() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [quotePage, setQuotePage] = useState(0);
   const [quotesPerView, setQuotesPerView] = useState(1);
 
@@ -79,20 +78,20 @@ export default function HomeView() {
         <h1 className="home-fade-up font-serif text-2xl font-bold tracking-[0.12em] text-white md:text-4xl md:tracking-[0.14em]">
           KARMA - HEE - SADHNA
         </h1>
+        <div className="home-fade-up mx-auto mt-4 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
 
-        <div className="relative mx-auto mt-8 flex w-full max-w-[1400px] justify-center px-0 md:mt-10">
+        <div className="relative mx-auto mt-8 flex w-full max-w-[1400px] justify-center px-0 md:mt-10 overflow-hidden">
           <div
-            className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[min(85%,420px)] w-[min(92%,520px)] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(30,64,175,0.45)_0%,rgba(15,23,42,0.2)_45%,transparent_72%)] blur-[2px]"
+            className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(30,64,175,0.45)_0%,rgba(15,23,42,0.2)_45%,transparent_72%)] blur-[2px]"
             aria-hidden
           />
-          <div className="relative z-[1] w-full">
+          <div className="relative z-[1] w-full h-[50vh] md:h-[75vh] max-h-[800px] min-h-[400px]">
             <Image
               src="/uploads/hero1.png"
               alt="Shri Shri Uttam Khyapa Maharaj"
-              width={900}
-              height={1100}
+              fill
               priority
-              className="mx-auto h-auto w-full max-h-[min(80vh,700px)] object-contain"
+              className="object-cover object-[center_20%]"
             />
           </div>
         </div>
@@ -135,7 +134,7 @@ export default function HomeView() {
       </section>
 
       <section className="py-8 md:py-10">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-4 md:gap-6">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-4 md:gap-6">
           {heroFeatureCards.map((card, idx) => (
             <div
               key={card.label}
@@ -159,8 +158,8 @@ export default function HomeView() {
         </div>
       </section>
 
-      <section className="border-t border-zinc-900 bg-black px-4 py-12 md:px-8 md:py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-14">
+      <section className="border-t border-[var(--accent)]/50 bg-black px-4 py-12 md:px-8 md:py-16">
+        <div className="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-14">
           <div className="flex w-full flex-col gap-4">
             <div className="relative aspect-[7/3] w-full overflow-hidden rounded-xl border border-[#8B1538]">
               <Image
@@ -187,7 +186,7 @@ export default function HomeView() {
             <h2 className="mt-3 font-serif text-2xl font-semibold leading-snug text-white md:text-3xl lg:text-[1.85rem] lg:leading-tight">
               Join Shri Nirban Dham on the Path of Spiritual Awakening and Divine Grace
             </h2>
-            <div className="mt-4 h-px w-full max-w-[220px] bg-[#8B1538]" aria-hidden />
+            <div className="mt-5 h-[1px] w-full max-w-[220px] bg-gradient-to-r from-[var(--accent)] to-transparent" aria-hidden />
             <p className="mt-5 font-sans text-sm italic leading-relaxed text-white md:text-[0.9375rem]">
               At Shri Nirban Dham, we welcome all seekers to embark on a journey of spiritual growth and inner peace.
               Through sacred rituals, meditation, and selfless service, we nurture a space where devotion meets
@@ -235,6 +234,7 @@ export default function HomeView() {
         <h3 className="mx-auto max-w-4xl font-serif text-xl font-semibold leading-snug text-white md:text-2xl lg:text-[1.65rem]">
           Preserve Spiritual Heritage for Future Generations
         </h3>
+        <div className="mx-auto mt-4 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
         <p className="mx-auto mt-5 max-w-3xl font-sans text-sm leading-relaxed text-white md:text-base">
           Shri Nirban Dham is a place where spirituality meets serenity. Through ancient wisdom, devotional practices, and
           selfless service, we create an environment for spiritual seekers to connect with their higher selves. Whether
@@ -244,7 +244,7 @@ export default function HomeView() {
       </section>
 
       <section className="bg-black px-4 pb-14 pt-4 md:px-8 md:pb-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {icons.map((item) => (
             <div key={item.title} className="flex flex-col items-center text-center">
               <div className="flex h-[88px] w-[88px] items-center justify-center overflow-visible rounded-full border-2 border-white/95 bg-black p-2 shadow-sm">
@@ -267,7 +267,7 @@ export default function HomeView() {
         </div>
       </section>
 
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-8 md:px-8 md:py-10">
+      <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-4 py-8 md:px-8 md:py-10">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
         <span className="shrink-0 font-serif text-2xl text-[var(--accent)] md:text-3xl" aria-hidden>
           ॐ
@@ -276,11 +276,12 @@ export default function HomeView() {
       </div>
 
       <section className="bg-black px-4 pb-12 md:px-8 md:pb-14">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-[1400px]">
           <p className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-[var(--gold)] md:text-sm">INITIATIVES</p>
           <h2 className="mt-3 max-w-4xl font-serif text-2xl font-semibold leading-snug text-white md:text-3xl">
             Empowering Communities Through Sustainable Initiatives
           </h2>
+          <div className="mt-4 h-[1px] w-[200px] bg-gradient-to-r from-[var(--accent)] to-transparent" aria-hidden />
           <p className="mt-5 max-w-4xl font-serif text-sm italic leading-relaxed text-white md:text-base">
             We empower communities by promoting sustainable practices, environmental education, and eco-friendly
             initiatives. Through conservation efforts, green projects, and social awareness programs, we inspire individuals
@@ -315,7 +316,7 @@ export default function HomeView() {
       </section>
 
       <section className="bg-black py-10">
-        <div className="relative mx-auto max-w-6xl px-10">
+        <div className="relative mx-auto max-w-[1400px] px-10">
           <button
             type="button"
             aria-label="Previous quotes"
@@ -374,7 +375,7 @@ export default function HomeView() {
       </section>
 
       <section className="bg-black px-4 py-12 md:px-8">
-        <div className="relative mx-auto w-full max-w-6xl px-12 md:px-14">
+        <div className="relative mx-auto w-full max-w-[1400px] px-12 md:px-14">
           <button
             type="button"
             aria-label="Previous initiative"
@@ -402,6 +403,7 @@ export default function HomeView() {
             <h2 className="font-serif text-2xl font-semibold leading-tight text-white md:text-3xl lg:text-[1.75rem] lg:leading-snug">
               {initiativesSection.headline}
             </h2>
+            <div className="mt-4 h-[1px] w-[200px] bg-gradient-to-r from-[var(--accent)] to-transparent" aria-hidden />
             <p className="mt-4 max-w-3xl font-serif text-sm leading-relaxed text-zinc-200 md:text-base">
               {initiativesSection.intro}
             </p>
@@ -455,20 +457,22 @@ export default function HomeView() {
       </section>
 
       <section className="bg-black px-4 pb-10 pt-8 md:px-8">
-        <div className="mx-auto w-full max-w-6xl rounded-lg border border-zinc-700/80 bg-[#121212] px-6 py-8 text-center md:px-10 md:py-10">
+        <div className="mx-auto w-full max-w-[1400px] rounded-lg border border-[var(--accent)]/40 bg-[#121212] px-6 py-8 text-center md:px-10 md:py-10">
           <h3 className="font-serif text-2xl font-semibold text-white md:text-[1.65rem]">Purpose and Goals</h3>
+          <div className="mx-auto mt-4 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
           <p className="mt-4 text-sm leading-relaxed text-white md:text-base">
             We strive to cultivate spiritual growth, sustainability, and selfless service, empowering communities through
             wisdom, devotion, and meaningful action for a harmonious future
           </p>
         </div>
 
-        <div className="mx-auto mt-10 grid w-full max-w-6xl items-start gap-10 md:grid-cols-2 md:gap-12 lg:mt-14 lg:gap-16">
+        <div className="mx-auto mt-10 grid w-full max-w-[1400px] items-start gap-10 md:grid-cols-2 md:gap-12 lg:mt-14 lg:gap-16">
           <div className="md:pl-2 lg:pl-4">
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--gold)] md:text-sm">DONATION</p>
             <h3 className="mt-3 font-serif text-2xl font-semibold leading-snug text-white md:text-3xl">
               Support Our Cause with a Donation
             </h3>
+            <div className="mt-4 h-[1px] w-[200px] bg-gradient-to-r from-[var(--accent)] to-transparent" aria-hidden />
             <p className="mt-5 text-sm leading-relaxed text-white md:text-base">
               Your support helps us create lasting change. Every donation empowers communities, supports sustainability,
               and drives impactful initiatives. Together, we can build a better future through education, conservation,
@@ -482,20 +486,13 @@ export default function HomeView() {
               ].map((line) => (
                 <li key={line} className="flex gap-3 leading-relaxed">
                   <span
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white"
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]"
                     aria-hidden
                   />
                   <span>{line}</span>
                 </li>
               ))}
             </ul>
-            {/* <button
-              type="button"
-              onClick={() => setIsModalOpen(true)}
-              className="mt-8 rounded-full bg-[var(--accent)] px-6 py-2.5 text-xs font-semibold text-white md:text-sm"
-            >
-              Donate via QR
-            </button> */}
           </div>
 
           <div className="flex w-full flex-col gap-3 md:ml-auto md:max-w-xl md:gap-4">
@@ -520,22 +517,9 @@ export default function HomeView() {
           </div>
         </div>
 
-        <div className="mx-auto mt-12 max-w-6xl border-t border-[var(--accent)]" aria-hidden />
+          <div className="mx-auto mt-8 h-[1px] md:w-[1200px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
       </section>
 
-      <Modal
-        open={isModalOpen}
-        title="Donation QR"
-        onClose={() => setIsModalOpen(false)}
-      >
-        <Image
-          src="/uploads/placeholder-qr.jpg"
-          alt="Donation QR"
-          width={500}
-          height={700}
-          className="mx-auto h-auto w-full max-w-xs rounded border border-zinc-700"
-        />
-      </Modal>
     </div>
   );
 }

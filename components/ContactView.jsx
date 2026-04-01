@@ -3,58 +3,67 @@
 import { useState } from "react";
 import Image from "next/image";
 import ContactForm from "./ContactForm";
-import Modal from "./Modal";
 
 export default function ContactView() {
   const [open, setOpen] = useState(false);
 
   return (
     <section className="w-full px-4 py-10 md:px-8">
-      <div className="text-center">
-        <p className="text-[var(--gold)]">Contact Us</p>
-        <h1 className="mt-1 text-3xl font-semibold">Get in Touch with us Today</h1>
+      <div className="text-center border-b border-[var(--accent)]/50 pb-12 w-full max-w-[1400px] mx-auto mb-10">
+        <h2 className="font-serif text-[28px] font-bold text-[var(--gold)]">Contact Us</h2>
+        <div className="mx-auto mt-2 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
+        <h1 className="mt-8 font-serif text-[32px] font-bold text-white md:text-[36px]">Get in Touch with us Today</h1>
       </div>
 
-      <div className="mt-8 grid gap-10 md:grid-cols-2 md:gap-12">
+      <div className="mx-auto w-full max-w-[1400px] grid gap-10 md:grid-cols-2 md:gap-16">
         <div className="text-left">
           <h2 className="font-serif text-3xl font-bold leading-tight text-white md:text-4xl">
             Let&apos;s Keep in Touch
           </h2>
+          <div className="mt-4 h-[1px] w-[200px] bg-gradient-to-r from-[var(--accent)] to-transparent" aria-hidden />
           <p className="mt-5 max-w-md font-sans text-sm leading-relaxed text-white md:text-base">
             We&apos;d love to hear from you. Whether you have questions, feedback, or need support, contact us.
           </p>
-          <div className="mt-10 space-y-10">
-            <div>
-              <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold)]">LOCATION</p>
-              <p className="mt-2 font-sans text-sm text-white md:text-base">
-                Bela More, Tarapith Road, Rampurhat, Birbhum
-              </p>
+          <div className="mt-12 space-y-10">
+            <div className="flex gap-4 items-start">
+              <svg className="w-[28px] h-[28px] shrink-0 text-[#E02644] mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div>
+                <p className="font-serif text-[18px] font-bold tracking-wide text-white">LOCATION</p>
+                <p className="mt-1 leading-relaxed font-serif text-[17px] text-zinc-300">
+                  Belia More, Tarapith Road,<br />Rampurhat,Birbhum
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold)]">
-                CONSULTATION
-              </p>
-              <p className="mt-2 font-sans text-sm text-white md:text-base">+91 9835370797</p>
+            
+            <div className="flex gap-4 items-start">
+               <svg className="w-[28px] h-[28px] shrink-0 text-[#E02644] mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+               </svg>
+               <div>
+                  <p className="font-serif text-[18px] font-bold tracking-wide text-white">CONSULTATION</p>
+                  <p className="mt-1 font-serif text-[17px] text-zinc-300">+91 9883376407</p>
+               </div>
             </div>
-            <div>
-              <p className="font-sans text-sm font-medium tracking-normal text-[var(--gold)]">Email Address</p>
-              <p className="mt-2 font-sans text-sm text-white md:text-base">hello@nirbhandham.org</p>
+
+            <div className="flex gap-4 items-start">
+               <svg className="w-[28px] h-[28px] shrink-0 text-[#E02644] mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+               </svg>
+               <div>
+                  <p className="font-serif text-[18px] font-bold tracking-wide text-white">Email Address</p>
+                  <p className="mt-1 font-serif text-[17px] text-zinc-300">hello@nirbandham.org</p>
+               </div>
             </div>
           </div>
         </div>
-        <div className="rounded border border-[#4f1b2b] bg-[#15040a] p-4">
+        <div className="rounded-md border border-[#4f1b2b] bg-[#160408] p-6 lg:p-8">
           <ContactForm />
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="mt-4 rounded-full border border-[var(--accent)] px-4 py-1 text-xs"
-          >
-            Open QR
-          </button>
         </div>
       </div>
 
-      <div className="mt-8 grid grid-cols-4 gap-3">
+      <div className="mx-auto mt-20 max-w-[1400px] grid grid-cols-2 md:grid-cols-4 gap-4 pb-10 border-b border-[#E02644]/40">
         {["1", "2", "1", "4"].map((x,index) => (
           <Image
             key={index}
@@ -62,20 +71,11 @@ export default function ContactView() {
             alt={`Gallery Contact`}
             width={280}
             height={180}
-            className="h-48 w-full object-cover"
+            className="h-44 w-full object-cover rounded-lg border-2 border-[#8B1538]"
           />
         ))}
       </div>
 
-      <Modal open={open} title="Donation QR" onClose={() => setOpen(false)}>
-        <Image
-          src="/uploads/placeholder-qr.jpg"
-          alt="QR"
-          width={500}
-          height={700}
-          className="mx-auto h-auto w-full max-w-xs"
-        />
-      </Modal>
     </section>
   );
 }

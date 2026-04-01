@@ -3,7 +3,7 @@ import Button from "./Button";
 
 export default function Hero() {
   return (
-    <section className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:px-6">
+    <section className="mx-auto grid w-full max-w-[1400px] gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:px-6">
       <div className="space-y-6">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
           Nirbhandham

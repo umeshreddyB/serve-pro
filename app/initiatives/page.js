@@ -10,7 +10,7 @@ export default function InitiativesPage() {
     <section className="w-full bg-black px-4 py-14 md:px-8 md:py-20">
       <div className="mx-auto max-w-4xl text-center">
         <h1 className="font-serif text-2xl font-semibold text-[#D4AF37] md:text-3xl">Our Initiatives</h1>
-        <div className="mx-auto mt-4 h-px w-24 bg-[#A51C30]/90" aria-hidden />
+        <div className="mx-auto mt-4 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
         <p className="mx-auto mt-8 max-w-3xl font-serif text-lg font-semibold leading-relaxed text-white md:text-xl">
           At Nirban Dham, every offering—whether a spiritual gathering or a selfless act of service—is rooted in the spirit of
           inner awakening and collective upliftment.
@@ -21,7 +21,7 @@ export default function InitiativesPage() {
         </p>
       </div>
 
-      <div className="mx-auto mt-14 grid max-w-6xl gap-6 md:mt-16 md:grid-cols-3 md:gap-6 lg:gap-8">
+      <div className="mx-auto mt-14 grid max-w-[1400px] gap-6 md:mt-16 md:grid-cols-3 md:gap-6 lg:gap-8">
         {initiatives.map((initiative) => (
           <article
             key={initiative.id}

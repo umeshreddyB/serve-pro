@@ -35,9 +35,11 @@ export default function AboutPage() {
     <section className="w-full px-4 py-10 md:px-8">
       <div className="bg-black px-4 py-14 text-center md:px-8 md:py-20">
         <div className="mx-auto max-w-4xl">
-          <p className="font-serif text-xs font-semibold uppercase tracking-[0.22em] text-[var(--gold)] md:text-sm">
+          <h1 className="text-center text-3xl font-semibold text-[var(--gold)]">
             About Us
-          </p>
+          </h1>
+          <div className="mx-auto mt-4 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
+
           <p className="mt-4 font-serif text-base font-normal text-white md:mt-5 md:text-lg">The Story Behind</p>
           <h1 className="mt-4 font-serif text-3xl font-bold leading-tight text-white md:mt-5 md:text-4xl lg:text-[2.5rem] lg:leading-snug">
             Our Journey: From Sacred Roots to a Thriving Community
@@ -101,8 +103,8 @@ export default function AboutPage() {
           </p>
         </div>
       </div>
-      <section className="border-t border-zinc-900 bg-black px-4 py-12 md:px-8 md:py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-14">
+      <section className="border-t border-[var(--accent)]/50 bg-black px-4 py-12 md:px-8 md:py-16">
+        <div className="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-2 md:items-start md:gap-12 lg:gap-14">
           <div className="flex w-full flex-col gap-4">
             <div className="relative aspect-[7/3] w-full overflow-hidden rounded-xl border border-[#8B1538]">
               <Image
@@ -129,7 +131,7 @@ export default function AboutPage() {
             <h2 className="mt-3 font-serif text-2xl font-semibold leading-snug text-white md:text-3xl lg:text-[1.85rem] lg:leading-tight">
               Join Shri Nirban Dham on the Path of Spiritual Awakening and Divine Grace
             </h2>
-            <div className="mt-4 h-px w-full max-w-[220px] bg-[#8B1538]" aria-hidden />
+            <div className="mt-4 h-[1px] w-full max-w-[220px] bg-gradient-to-r from-[var(--accent)] to-transparent" aria-hidden />
             <p className="mt-5 font-sans text-sm italic leading-relaxed text-white md:text-[0.9375rem]">
               At Shri Nirban Dham, we welcome all seekers to embark on a journey of spiritual growth and inner peace.
               Through sacred rituals, meditation, and selfless service, we nurture a space where devotion meets
@@ -177,6 +179,7 @@ export default function AboutPage() {
         <h3 className="mx-auto max-w-4xl font-serif text-xl font-semibold leading-snug text-white md:text-2xl lg:text-[1.65rem]">
           Preserve Spiritual Heritage for Future Generations
         </h3>
+        <div className="mx-auto mt-4 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
         <p className="mx-auto mt-5 max-w-3xl font-sans text-sm leading-relaxed text-white md:text-base">
           Shri Nirban Dham is a place where spirituality meets serenity. Through ancient wisdom, devotional practices, and
           selfless service, we create an environment for spiritual seekers to connect with their higher selves. Whether
@@ -186,7 +189,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-black px-4 pb-14 pt-4 md:px-8 md:pb-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {icons.map((item) => (
             <div key={item.title} className="flex flex-col items-center text-center">
               <div className="flex h-[88px] w-[88px] items-center justify-center overflow-visible rounded-full border-2 border-white/95 bg-black p-2 shadow-sm">
@@ -209,7 +212,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-8 md:px-8 md:py-10">
+      <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-4 py-8 md:px-8 md:py-10">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
         <span className="shrink-0 font-serif text-2xl text-[var(--accent)] md:text-3xl" aria-hidden>
           ॐ
@@ -219,6 +222,7 @@ export default function AboutPage() {
 
       <div className="bg-[#151515] py-6 text-center">
         <h3 className="text-2xl font-semibold">Purpose and Goals</h3>
+        <div className="mx-auto mt-4 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" aria-hidden />
         <p className="mx-auto mt-2 max-w-3xl text-sm text-zinc-300">
           We strive to offer spiritual growth, sustainability and social service opportunities through inclusive and meaningful initiatives.
         </p>

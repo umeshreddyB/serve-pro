@@ -5,15 +5,13 @@ const legalLinks = [
   { label: "Disclaimer", href: "/legal/disclaimer" },
   { label: "Privacy", href: "/legal/privacy" },
   { label: "Terms of use", href: "/legal/terms" },
-  { label: "Cookie Policy", href: "/legal/privacy" },
-  { label: "Returns &", href: "/legal/refund" },
-  { label: "Refunds", href: "/legal/refund" },
+  { label: "Returns & Refunds", href: "/legal/refund" },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-black">
-      <div className="mx-auto w-full max-w-6xl border-t border-[#5b1224] px-6 pb-8 pt-10 md:px-8">
+      <div className="mx-auto w-full max-w-[1400px] px-6 pb-8 pt-10 md:px-8">
         <div className="grid gap-10 md:grid-cols-[1.3fr_0.8fr_1fr] md:gap-12">
           <div>
             <div className="flex gap-2">
