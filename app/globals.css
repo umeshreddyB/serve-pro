@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #f3f4f6;
+  --muted: #c4c4c4;
+  --accent: #d21444;
+  --gold: #d4a54c;
+  --card: #0e0e0e;
+  --border: #3a3a3a;
 }
 
 @theme inline {
@@ -12,15 +17,94 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@keyframes home-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-fade-up {
+  opacity: 0;
+  animation: home-fade-up 0.65s ease-out forwards;
+}
+
+.home-fade-up-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.home-fade-up-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.home-fade-up-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.home-fade-up-delay-4 {
+  animation-delay: 0.4s;
+}
+
+.about-story-fade > p {
+  opacity: 0;
+  animation: home-fade-up 0.7s ease-out forwards;
+}
+
+.about-story-fade > p:nth-child(1) {
+  animation-delay: 0.06s;
+}
+
+.about-story-fade > p:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.about-story-fade > p:nth-child(3) {
+  animation-delay: 0.18s;
+}
+
+.about-story-fade > p:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.about-story-fade > p:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.about-story-fade > p:nth-child(6) {
+  animation-delay: 0.36s;
+}
+
+.about-story-fade > p:nth-child(7) {
+  animation-delay: 0.42s;
+}
+
+.about-story-fade > p:nth-child(8) {
+  animation-delay: 0.48s;
+}
+
+/* Quotes page: soft “brush” fade from image (right) into white */
+.quote-card-photo {
+  mask-image: radial-gradient(ellipse 115% 100% at 100% 50%, #000 0%, #000 42%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 115% 100% at 100% 50%, #000 0%, #000 42%, transparent 78%);
 }
